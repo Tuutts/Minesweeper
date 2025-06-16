@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Minesweeper</h1>
+        <div class="controls">
+            <button id="restart">Restart</button>
+            <span id="flags">Flags: <span id="flag-count">0</span></span>
+            <span id="moves">Moves: <span id="move-count">0</span></span>
+            <span id="timer">Time: <span id="time">0</span>s</span>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="mute" title="Toggle sound">🔊</button>
+            <button id="customize-btn" title="Change color"><span>Hover Color</span></button>
+        </div>
+        <div id="board" class="board"></div>
+        <div id="message" class="message"></div>
+        <div id="modal" class="modal"><div class="modal-content" id="modal-content"></div></div>
+        <div id="custom-modal" class="modal">
+            <div class="modal-content">
+                <h2>Customize Game</h2>
+                <form id="custom-form">
+                    <label>Theme:
+                        <select id="theme-select">
+                            <option value="blackgreen">Black & Green</option>
+                            <option value="blackrandom">Black & Random Color</option>
+                            <option value="glass">Glassmorphism</option>
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </label>
+                    <label>Hover Color:
+                        <input type="color" id="hover-color" value="#546e7a">
+                    </label>
+                    <label>Board Size:
+                        <input type="number" id="custom-size" min="6" max="20" value="10">
+                    </label>
+                    <label>Mines:
+                        <input type="number" id="custom-mines" min="5" max="99" value="15">
+                    </label>
+                    <button type="submit">Apply</button>
+                    <button type="button" id="close-custom">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
